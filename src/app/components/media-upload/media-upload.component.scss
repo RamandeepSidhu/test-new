@@ -1,0 +1,337 @@
+/* Variables */
+$primaryColor: #655765;
+$secondaryColor: #d0e1d0;
+
+/* Main layout */
+main {
+  margin-top: 58px;
+
+  .container {
+    padding-top: 1rem;
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .flex-child {
+      flex: 1;
+      padding: 20px;
+      border: 2px solid $primaryColor;
+      position: relative;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+
+      &.green {
+        background-color: $secondaryColor;
+        color: black;
+      }
+
+      .instagram-preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .facebook-post-preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+      }
+    }
+
+    .preview-instragram {
+      img {
+        height: 170px;
+      }
+
+      .instagram-post-preview {
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        padding: 10px;
+        width: 300px;
+        max-width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        .post-image {
+          width: 100%;
+          height: 200px;
+          border-radius: 4px;
+          object-fit: cover;
+        }
+
+        .caption {
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 1.4;
+          color: black;
+        }
+
+        .hashtags {
+          margin-top: 10px;
+          font-size: 12px;
+          color: #3897f0;
+          cursor: pointer;
+          display: flex;
+          flex-wrap: wrap;
+
+          span {
+            margin-right: 5px;
+          }
+        }
+
+        .user-tags {
+          margin-top: 10px;
+          font-size: 12px;
+          color: #3897f0;
+          cursor: pointer;
+
+          span {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
+    .post-create {
+      .app-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+          color: $primaryColor;
+          margin-bottom: 1rem;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          margin-bottom: 1rem;
+          padding: 10px;
+          border: 1px solid $primaryColor;
+          border-radius: 5px;
+          font-size: 16px;
+          resize: vertical;
+
+          &:focus {
+            outline: none;
+            box-shadow: 0 0 5px $primaryColor;
+          }
+        }
+
+        .dropdown {
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          display: inline !important;
+
+          .button {
+            background-color: $primaryColor;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 1rem;
+
+            &:hover {
+              background-color: darken($primaryColor, 10%);
+            }
+          }
+
+          .dropdown-content {
+            position: static;
+            width: 100%;
+            background-color: #f9f9f9;
+            border: 1px solid $primaryColor;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1;
+            display: none;
+
+            &.open {
+              display: block;
+            }
+
+            input {
+              width: 100%;
+              margin-bottom: 1rem;
+              padding: 10px;
+              border: 1px solid $primaryColor;
+              border-radius: 5px;
+              font-size: 16px;
+
+              &:focus {
+                outline: none;
+                box-shadow: 0 0 5px $primaryColor;
+              }
+            }
+
+            .btn {
+              background-color: $primaryColor;
+              color: white;
+              cursor: pointer;
+              padding: 10px;
+              border: none;
+              border-radius: 5px;
+              font-size: 16px;
+
+              &:hover {
+                background-color: darken($primaryColor, 10%);
+              }
+            }
+
+            div {
+              margin-bottom: 5px;
+              cursor: pointer;
+              &:hover {
+                color: $primaryColor;
+              }
+            }
+          }
+        }
+
+        button {
+          background-color: $primaryColor;
+          color: white;
+          cursor: pointer;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+
+          &:hover {
+            background-color: darken($primaryColor, 10%);
+          }
+
+          &:disabled {
+            background-color: lighten($primaryColor, 20%);
+            cursor: not-allowed;
+          }
+        }
+      }
+      .hashtag-search {
+        display: flex;
+        width: 100%;
+        margin-bottom: 1.2em;
+
+        .input-hastage {
+          flex: 1;
+          input {
+            margin-bottom: 0;
+          }
+        }
+
+        /* Add the following styles to set the height of the input and button */
+        .hashtag-search input,
+        .hashtag-search button {
+          height: 40px; /* Adjust the height to your desired value */
+        }
+        .hashtage-button {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.instagram-profile {
+  display: flex;
+  align-items: center;
+
+  .profile-picture {
+    width: 63px;
+    height: 54px !important;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .profile-name {
+    font-weight: bold;
+  }
+}
+
+input#fileInput {
+  display: none;
+}
+
+.post-create {
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.img-video-div {
+  margin-right: 10px;
+  img,
+  video {
+    max-width: 400px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    flex-wrap: wrap;
+  }
+}
+
+label#dragDropLabel {
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  top: 10px;
+}
+
+.select-file {
+  background-color: hsl(0, 0%, 88%);
+  color: hsl(236, 10.43%, 48.49%);
+  height: 42px;
+  border-radius: 43px;
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+textarea.textbox.ng-untouched.ng-pristine.ng-valid {
+  width: 96%;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.textbox {
+  width: 96%;
+  height: 200px;
+  resize: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+
+  .button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+}

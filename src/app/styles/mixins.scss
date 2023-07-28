@@ -1,0 +1,142 @@
+@import "variables";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-col{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin btn-style {
+  font-size: 16px;
+  line-height: 26px;
+  padding: 12px 40px;
+  font-weight: 700;
+  font-family: $primary-font;
+  border-radius: 43px;
+  background-color: $primary-color;
+}
+@mixin input-style{
+  border: 1px solid $gray-light;
+  border-radius: 8px;
+  padding: 0  16px;
+  height: 50px;
+}
+@mixin text {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  color:$gray-medium-color;
+  @media (max-width: $sm-min) {
+    font-size: 15px;
+    line-height: 21px;
+
+  }
+}
+
+@mixin text2 {
+  font-size: 18px;
+  line-height: 30px;
+  @media (max-width: $sm-min) {
+    font-size: 17px;
+  }
+}
+@mixin primary-shadow {
+  box-shadow: 0px 5px 19px 0px rgba(93, 95, 239, 0.19);
+
+}
+
+
+// headline -----
+@mixin headline {
+  font-family: $primary-font;
+  font-weight: $h1-font-weight;
+  font-size: $h1-font-size;
+  line-height: 42px;
+  color: $dark-grey;
+  @media (max-width:$sm-max) {
+    font-size: 26px !important;
+  }
+
+  @media (max-width: $lg-max) {
+    font-size: 50px;
+  }
+  @media (max-width: $sm-min) {
+    font-size: 32px;
+  }
+}
+
+@mixin headline2 {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: $h2-font-weight;
+  font-size: $h2-font-size;
+  line-height: 53px;
+  @media (max-width: $lg-max) {
+    font-size: 38px;
+    line-height: 48px;
+  }
+  @media (max-width: $md-max) {
+    font-size: 34px;
+    line-height: 44px;
+  }
+  @media (max-width: $sm-min) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+@mixin headline3 {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: $h3-font-weight;
+  font-size: $h3-font-size;
+  line-height: 44px;
+}
+
+@mixin headline4 {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: $h4-font-weight;
+  font-size: $h4-font-size;
+  line-height: 30px;
+  @media (max-width:$md-max) {
+     font-size: 21px;
+  }
+}
+
+@mixin headline5 {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: $h5-font-weight;
+  font-size: $h5-font-size;
+  line-height: 1.4em;
+}
+
+@mixin headline6 {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: $h6-font-weight;
+  font-size: $h6-font-size;
+  line-height: 1.4em;
+  @media (max-width: $sm-min) {
+    font-size: 17px;
+    line-height: 28px;
+  }
+}

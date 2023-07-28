@@ -1,0 +1,65 @@
+<main style="margin-top: 58px;">
+    <div class="container pt-4">
+        <div class="flex-container">
+            <div class="flex-child magenta">
+                <div class="post-create">
+                    <section *ngIf="facebookUserAccessToken" class="app-section">
+                        <h3>Send a post to Instagram</h3>
+                        <input [(ngModel)]="imageUrl" placeholder="Enter a JPEG image url..." />
+                        <button class="btn action-btn" (click)="addImageUrl()">Add</button>
+                        <div class="row">
+                            <div *ngFor="let item of imageUrlList;let index" class="col-md-3">
+                                <img src="{{item}}" style="height: 100px; width: 100px;" />
+                                <p (click)="removeImage(index)" style="cursor: pointer;">X</p>
+                            </div>
+                        </div>
+                        <textarea [(ngModel)]="cardText.response" placeholder=" Write a caption..."
+                            rows="10"></textarea>
+                        <div class="hashtag-search">
+                            <span class="input-hastage">
+                                <input type="text" #textInput placeholder="Write a caption AI..." />
+                            </span>
+                            <button class="btn action-btn hashtage-button"
+                                (click)="generateText([textList[0]], textInput.value)">Caption Generate AI</button>
+                        </div>
+                        <div class="hashtag-search">
+                            <span class="input-hastage">
+                                <input type="text" [(ngModel)]="searchTerm" (input)="filterHashtags()"
+                                    placeholder="Search Hashtags" />
+                            </span>
+                            <button class="btn action-btn hashtage-button"
+                                (click)="hastageText(newTextList, searchTerm)">Search AI</button>
+                        </div>
+                        <div *ngFor="let item of newTextList; let i = index" (click)="addHashtagToBio(item.response)">
+                            {{ item.response }} </div>
+                        <input type="text" [(ngModel)]="taggedUsername" placeholder="Enter tagged username">
+                        <button (click)="shareInstagramPost()" class="btn action-btn"
+                            [disabled]="isSharingPost || !imageUrlList"> {{ isSharingPost ? 'Sharing...' : 'Share' }}
+                        </button>
+                    </section>
+                </div>
+            </div>
+            <div class="flex-child green preview-instragram">
+                <div class="username">
+                    <div *ngIf="instagramUsername" class="instagram-profile-new">
+                        <img *ngIf="profilePictureUrl" [src]="profilePictureUrl" alt="Profile Picture"
+                            class="profile-picture">
+                        <p class="profile-name">{{ instagramUsername }}</p>
+                    </div>
+                </div>
+                <div class="instagram-preview">
+                    <div class="instagram-preview-inner">
+                        <div *ngFor="let image of imageUrlList" class="instagram-image-box">
+                            <img src="{{ image }}" width="100%">
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <div class="post-text"> {{ cardText.response }}</div>
+                        <!-- <div class="hashtags"> {{captionWithText}} </div> -->
+                        <div class="tagged-username">{{ taggedUsername }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

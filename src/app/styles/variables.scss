@@ -1,0 +1,58 @@
+//font
+$primary-font: 'DM Sans', sans-serif;
+$secondary-font: 'DM Sans', sans-serif;
+
+
+// Primary Colors
+$primary-color: #743CFF;
+$secondary-color: #02E48E;
+$theme-color3: #186ef2;
+$theme-color4: #f4f5fa;
+
+
+// Bg color
+$bg-theme-color1: $primary-color;
+$bg-theme-color2: $secondary-color;
+$bg-theme-color3: $theme-color3;
+$bg-theme-color4: $theme-color4;
+
+// Other Colors
+$white: #fff;
+$dark-grey: #070625;
+$gray: #4C4B61;
+$gray-medium-color: #797988;
+$gray-medium-light: #A7A7B0;
+$gray-light:#D5D5D8;
+
+
+// Font size 
+$h1-font-size: 32px;
+$h2-font-size: 42px;
+$h3-font-size: 36px;
+$h4-font-size: 24px;
+$h5-font-size: 22px;
+$h6-font-size: 20px;
+
+
+// Font Weight 
+$h1-font-weight: 600;
+$h2-font-weight: 600;
+$h3-font-weight: 600;
+$h4-font-weight: 600;
+$h5-font-weight: 600;
+$h6-font-weight: 600;
+
+
+// Breakpoints
+$xs-min: 414px;
+$xs-max: 575px;
+$sm-min: 576px;
+$sm-max: 767px;
+$md-min: 768px;
+$md-max: 991px;
+$lg-min: 992px;
+$lg-max: 1199px;
+$xl-min: 1200px;
+$xl-max: 1439px;
+$xxl-min: 1440px;
+$xxl-max: 1535px;

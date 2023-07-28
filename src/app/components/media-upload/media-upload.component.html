@@ -1,0 +1,51 @@
+<main style="margin-top: 58px;">
+    <div class="container pt-4">
+        <div class="flex-container">
+            <div class="flex-child magenta">
+                <div class="post-create">
+                    <section *ngIf="accessToken" class="app-section">
+                        <h3 style="font-weight: 700;">Send a post to Facebook Page</h3>
+                        <div class="select-file">
+                            <label for="fileInput" class="isBold colorGray" id="dragDropLabel">Click or Drag &amp; Drop
+                                media</label>
+                            <input type="file" id="fileInput" accept="image/*,video/*"
+                                (change)="onSelectFacebook($event)" multiple />
+                            <div id="imagePreviewContainer"></div>
+                        </div>
+                        <textarea [(ngModel)]="cardText.response" placeholder=" Write a caption..."
+                            rows="10"></textarea>
+                        <div class="hashtag-search">
+                            <span class="input-hastage">
+                                <input type="text" #textInput placeholder="Write a caption AI..." />
+                            </span>
+                            <button class="btn action-btn hashtage-button"
+                                (click)="generateText([textList[0]], textInput.value)">Caption Generate AI</button>
+                        </div>
+                        <div class="hashtag-search">
+                            <span class="input-hastage">
+                                <input type="text" [(ngModel)]="searchTerm" (input)="filterHashtags()"
+                                    placeholder="Search Hashtags" />
+                            </span>
+                            <button class="btn action-btn hashtage-button"
+                                (click)="hastageText(newTextList, searchTerm)">Search AI</button>
+                        </div>
+                        <div *ngFor="let item of newTextList; let i = index" (click)="addHashtagToBio(item.response)">
+                            {{ item.response }} </div>
+                        <input type="text" [(ngModel)]="taggedUsername" placeholder="Enter tagged username">
+                        <button class="btn action-btn" (click)="onPublishClick()">Facebook Page Share</button>
+                    </section>
+                </div>
+            </div>
+            <div class="flex-child green preview-instragram">
+                <div class="facebook-post-preview">
+                    <img *ngIf="imagePreview; else dummyImage" [src]="imagePreview" alt="Facebook Post Preview" />
+                    <ng-template #dummyImage>
+                        <img *ngIf="!imagePreview" src="../../assets/defult-users.png" alt="Dummy Image" />
+                    </ng-template>
+                    <p *ngIf="cardText?.response">{{ cardText?.response }}</p>
+                    <p *ngIf="taggedUsername">Tagged Username: {{ taggedUsername }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

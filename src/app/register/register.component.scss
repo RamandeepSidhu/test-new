@@ -1,0 +1,152 @@
+@import "../styles/index.scss";
+
+.login_wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .dark_box {
+    width: 485px;
+    height: 100%;
+    background-image: url(../../assets/bg-logos.png);
+    background-color: #070625;
+    padding: 70px 40px;
+    @include flex-col;
+    @media (max-width: $sm-max) {
+      padding: 40px 15px;
+      height: auto;
+    }
+    .logo {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .login_slider {
+      h3 {
+        color: #fff;
+        font-family: $primary-font;
+        font-size: 29px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        @media (max-width: $sm-max) {
+          font-size: 20px;
+          line-height: 30px;
+          margin: 70px 0 20px 0;
+        }
+      }
+    }
+  }
+
+  .login_form_wrap {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    @media (max-width:$sm-max) {
+      padding: 40px 15px;
+    }
+    .sing-in-form {
+      .form_text {
+        h1 {
+          @include headline;
+        }
+        p {
+          @include text;
+        }
+      }
+      .login_form {
+        margin: 35px 0;
+        label {
+          display: block;
+          margin: 13px 0;
+        }
+        input[type="email"],
+        input[type="password"] {
+          @include input-style;
+          width: 100%;
+          @include text;
+          color: $dark-grey;
+        }
+        input[type="password"] {
+          position: relative;
+          padding-right: 25px;
+          background-image: url(../../assets/eye.svg);
+          background-size: 24px;
+          background-repeat: no-repeat;
+          background-position: right 15px center;
+        }
+        button {
+          @include btn-style;
+          @include primary-shadow;
+          border: none;
+          width: 100%;
+          color: $white;
+          margin-top: 35px;
+        }
+        .sign-in-link {
+          margin-top: 20px;
+          @include text;
+          color: $gray-medium-light;
+          font-weight: 500;
+          a {
+            color: $dark-grey;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .social-login {
+      .divder-text {
+        @include text;
+        color: $dark-grey;
+        font-weight: 600;
+        position: relative;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 41%;
+          max-width: 220px;
+          top: 50%;
+          border-top: 1px solid $gray-light;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+      .signup-btn {
+        @media (max-width:$sm-max) {
+          flex-wrap: wrap;
+        }
+       
+        a {
+          @include input-style;
+          padding: 12px;
+          text-align: center;
+          border-radius: 50px;
+          margin: 10px 0px;
+          min-width: 220px;
+          width: 100%;
+          @include text;
+          font-size: 15px;
+          color: $dark-grey;
+          font-weight: 600;
+          &:first-child {
+            margin-right: 15px;
+            @media (max-width: $sm-max) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
